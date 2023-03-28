@@ -1,0 +1,16 @@
+# Set base image
+FROM node:slim
+
+# Set working directory
+WORKDIR /usr/src/app
+
+# Install npm packages
+COPY ./package.json .
+RUN npm install
+RUN npm install -g nodemon
+
+# Copy Files
+COPY ./ ./
+
+# Run
+CMD ["npm", "run" ,"start-dev"]
