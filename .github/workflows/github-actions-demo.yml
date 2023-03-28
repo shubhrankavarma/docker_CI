@@ -16,4 +16,5 @@ jobs:
         run: |
           ls ${{ github.workspace }}
       - run: echo "🍏 This job's status is ${{ job.status }}."  
-      - run: docker build -f Dockerfile.dev .
+      - run: docker build -t getting_started -f Dockerfile.dev .
+      - run: docker run -p 8081:8081 getting_started 
