@@ -32,9 +32,8 @@ app.get('/', (req, res) => {
     res.send('Hello002asdf30');
 });
 
-app.listen(8081, () => {
-
+const server = app.listen(0, () => {
     const ipAddr = ip.address();
-    console.log(ipAddr+":"+8081)
+    console.log(ipAddr + ":" + server.address().port);
 
 });
