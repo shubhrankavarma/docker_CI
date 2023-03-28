@@ -1,6 +1,7 @@
 const express = require('express');
 const redis = require('redis');
 const app = express();
+const ip = require('ip');
 // const client = redis.createClient({
 //     url: 'redis://redis-server'
 // })
@@ -33,8 +34,7 @@ app.get('/', (req, res) => {
 
 app.listen(8081, () => {
 
-    // Print the IP and port of the server
-    const address = app.address();
-    console.log(`Server listening on ${address.address}:${address.port}`);
+    const ipAddr = ip.address();
+    console.log(ipAddr+":"+8081)
 
 });
